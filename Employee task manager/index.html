@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Employee || Taskmanager</title>
+      <!-- Meta tags -->
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <script>
+         addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+      </script>
+      <!-- Meta tags -->
+      <!--stylesheets-->
+      <link href="css/style.css" rel='stylesheet' type='text/css' media="all">
+      <!--//style sheet end here-->
+      <link href="//fonts.googleapis.com/css?family=Barlow:300,400,500" rel="stylesheet">
+       <!--start script-->
+    	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	  	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	  	<script>
+	  		$(function(){
+    var dtToday = new Date();
+    
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+    
+    var maxDate = year + '-' + month + '-' + day;
+    //alert(maxDate);
+    $('#date').attr('min', maxDate);
+});
+	  	</script>
+    <!--//script end here-->
+      
+   </head>
+   <body>
+      <h1 class="header-w3ls">
+         Employee Task Managment 
+      </h1>
+      <!-- multistep form -->
+      <div class="main-bothside">
+         <form action="t.php" method="POST">
+            <div class="form-mid-w3ls">
+                  <input type="Date" name="date" id="date"  placeholder="Date" required="">
+               </div>
+            <div class="form-group">
+               <div class="form-mid-w3ls">
+                  <input type="text" name="empid"   placeholder="EmpID" required="">
+               </div>               
+               <div class="form-mid-w3ls">
+                  <input type="text" name="ename"   placeholder="Name" required="">
+               </div>
+               <div class="form-mid-w3ls">
+                  <input type="text" name="department"  placeholder="Department Name" required="">
+               </div>
+           </div>
+            <div class="form-group">
+               <div class="form-mid-w3ls">
+                  <input type="text" name="projectname"  placeholder="Project Name" required="">
+               </div>
+               <div class="form-mid-w3ls">
+                  <input type="text" name="reportingto"  placeholder="Reporting To" required="">
+               </div>
+            </div>
+            <div class="parent-clss">
+               <div class="personal-info">
+                  <p>Status</p>
+                  <div class="form-check">
+                     <input class="form-check-input" type="radio" name="status" value="pending" checked="true">
+                     <label class="form-check-label">
+                     Pending
+                     </label>
+                  </div>
+                  <div class="form-check">
+                     <input class="form-check-input" type="radio" name="status" value="completed" checked="true">
+                     <label class="form-check-label">
+                     Complete
+                     </label>
+                  </div>
+               </div>
+               <div class="personal-info">
+                  <p>Pending %</p>
+                  <div class="form-check">
+                     <input class="form-check-input" type="radio" name="pending" value="0-50%" >
+                     <label class="form-check-label">
+                     0-50%
+                     </label>
+                  </div>
+                  <div class="form-check">
+                     <input class="form-check-input" type="radio" name="pending" value="50-99%">
+                     <label class="form-check-label">
+                     50-99% 
+                     </label>
+                     <div class="clear"></div>
+                  </div>
+                 <!--  <div class="form-check">
+                     <input class="form-check-input" type="radio" name="pending" value="none" >
+                     <label class="form-check-label">
+                     None
+                     </label>
+                  </div> -->
+               </div>
+            </div>
+          <div class="form-control-w3l">
+               <textarea  name="msg" placeholder="Type Assigned Task..." required=""></textarea>
+            </div>
+           <input type="submit" name="submit"></input>
+         </form>
+      </div>
+      <div class="copy">
+         <p>©2019-2020 All Rights Reserved | Design by <a href="https://www.ayninfotech.com" target="_blank">Ayninfotech</a></p>
+      </div>
+   </body>
+</html>
